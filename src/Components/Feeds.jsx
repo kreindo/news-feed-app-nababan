@@ -1,11 +1,12 @@
-import React from 'react';import { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 const defaultNews = {
   status: 'ok',
   totalResult: 0,
   articles: [],
 };
 const endpoint =
-  'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=cad82b04d8734204ade8411de722f112https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=cad82b04d8734204ade8411de722f112';
+  'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=cad82b04d8734204ade8411de722f112https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=cad82b04d8734204ade8411de722f112cad82b04d8734204ade8411de722f112cad82b04d8734204ade8411de722f112';
 const Feeds = () => {
   const [news, setNews] = useState(defaultNews);
   const [page, setPage] = useState(0);
@@ -23,7 +24,7 @@ const Feeds = () => {
           return {
             ...result,
             articles: [...current.articles, ...result.articles],
-            totalResult: result.totalResult,
+            totalResults: result.totalResults,
             status: result.status,
           };
         });
